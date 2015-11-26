@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'rmagick'
+gem 'carrierwave'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
