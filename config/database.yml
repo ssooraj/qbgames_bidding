@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  reconnect: false
+
+development:
+  <<: *default
+  database: qliga
+  username: sooraj
+  password: qburst
+  host: localhost
+
+test:
+  <<: *default
+  database: qliga
+  username: sooraj
+  password: qburst
+  host: localhost
+
+production:
+  <<: *default
+  database: qliga
+  username: sooraj
+  password: qburst
+  host: localhost
