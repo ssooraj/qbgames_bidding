@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 <head>
-  <title>Qliga</title>
+  <title>Auction</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="assets/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="assets/style.css"> <!-- Resource style -->
+  <script src="assets/modernizr.js"></script> <!-- Modernizr -->
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+<script src="assets/velocity.min.js"></script>
+<script src="assets/main.js"></script> <!-- Resource jQuery -->
 </body>
 </html>
+
+
+
+
+
+
+
+

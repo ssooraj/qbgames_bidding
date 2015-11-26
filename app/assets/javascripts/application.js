@@ -13,7 +13,5 @@
 //= require jquery-2.1.1
 //= require jquery_ujs
 //= require turbolinks
-//= require modernizr
-//= require main
-//= require velocity.min
+
 //= require_tree .
