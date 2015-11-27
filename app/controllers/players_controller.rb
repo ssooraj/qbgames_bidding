@@ -4,9 +4,11 @@ class PlayersController < ApplicationController
     @list = Player.all
   end
 
-  def show
+  def get_player_details
     p params
-    @player = Player.find params[:id]
-    render :layout => false
+    player = Player.find params[:id]
+    render json: { success: true,
+                   player_name: player.display_name
+           }
   end
 end
