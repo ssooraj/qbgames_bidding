@@ -8,8 +8,30 @@
   <% @list.each do |player| %>
       <li class="cd-item">
         <%= image_tag(player.avatar.medium.url) %>
-        <a href="<%= player_path(player.id) %>" class="cd-trigger">Quick View</a>
+        <a href="#0" class="cd-trigger">Quick View</a>
       </li> <!-- cd-item -->
+
+      <div class="cd-quick-view">
+        <div class="cd-slider-wrapper">
+          <ul class="cd-slider">
+            <%= image_tag(player.avatar.medium.url) %>
+          </ul> <!-- cd-slider -->
+
+          <ul class="cd-slider-navigation">
+            <!--<li><a class="cd-next" href="#0">Prev</a></li>-->
+            <!--<li><a class="cd-prev" href="#0">Next</a></li>-->
+          </ul> <!-- cd-slider-navigation -->
+        </div> <!-- cd-slider-wrapper -->
+
+        <div class="cd-item-info">
+          <h2><%= player.first_name %>  <%= player.last_name%></h2>
+          <ul class="cd-item-action">
+            <li><button class="add-to-cart">Bid</button></li>
+            <li><a href="#0">Learn more</a></li>
+          </ul> <!-- cd-item-action -->
+        </div> <!-- cd-item-info -->
+        <a href="#0" class="cd-close">Close</a>
+      </div> <!-- cd-quick-view -->
   <%end%>
 
 </ul> <!-- cd-items -->
