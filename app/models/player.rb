@@ -3,6 +3,6 @@ class Player < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
 
 	def display_name
-		"#{first_name}" + "#{last_name}"
+		"#{first_name}" +' '+"#{last_name}"
 	end
 end

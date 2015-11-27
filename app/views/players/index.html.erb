@@ -6,7 +6,7 @@
   <% @list.each do |player| %>
       <li class="cd-item">
         <img src=<%=player.avatar.medium.url %>   name= <%= player.id %> alt="Item Preview">
-        <a href="#0" class="cd-trigger">Quick View</a>
+        <a href="#0" class="cd-trigger"><%= player.display_name%></a>
       </li> <!-- cd-item -->
   <% end %>
 
@@ -17,20 +17,13 @@
     <ul class="cd-slider">
       <li class="selected"><img src="" alt="Product 1"></li>
     </ul> <!-- cd-slider -->
-
-    <ul class="cd-slider-navigation">
-      <li><a class="cd-next" href="#0">Prev</a></li>
-      <li><a class="cd-prev" href="#0">Next</a></li>
-    </ul> <!-- cd-slider-navigation -->
   </div> <!-- cd-slider-wrapper -->
 
   <div class="cd-item-info">
     <h2></h2>
-    <p></p>
+    <p id="team"></p>
+    <p id="base-price"> </p>
 
-    <ul class="cd-item-action">
-
-    </ul> <!-- cd-item-action -->
   </div> <!-- cd-item-info -->
   <a href="#0" class="cd-close">Close</a>
 </div> <!-- cd-quick-view -->
