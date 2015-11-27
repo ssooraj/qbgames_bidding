@@ -20,6 +20,21 @@ jQuery(document).ready(function($){
                 $('.cd-item-info').children('#team').text('Team: '+ response.team_name);
                 base = response.base * 10000;
                 $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
+                if( response.cricket ) {
+                    $('.cd-item-info').children('#cricket').attr('src', '/assets/Cricket.png');
+                }else {
+                    $('.cd-item-info').children('#cricket').attr('src', '');
+                }
+                if( response.football ) {
+                    $('.cd-item-info').children('#football').attr('src', '/assets/Soccer.png');
+                }else {
+                    $('.cd-item-info').children('#football').attr('src', '');
+                }
+                if( response.badminton ) {
+                    $('.cd-item-info').children('#badminton').attr('src', '/assets/Badminton.png');
+                }else {
+                    $('.cd-item-info').children('#badminton').attr('src', '');
+                }
                 if( response.sold ) {
                     sold = response.sold * 10000;
                     $('.cd-item-info').children('#sold-price').text('Sold Price: ₹ '+ sold);
