@@ -14,7 +14,8 @@ class PlayersController < ApplicationController
                    sold: player.sold_price,
                    cricket: player.is_cricket,
                    football: player.is_football,
-                   badminton: player.is_badminton
+                   badminton: player.is_badminton,
+                   status: player.is_sold
            }
   end
 end

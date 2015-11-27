@@ -18,7 +18,17 @@ jQuery(document).ready(function($){
             success: function (response) {
                 $('.cd-item-info').children('h2').text(response.player_name);
                 $('.cd-item-info').children('#team').text('Team: '+ response.team_name);
-                $('.cd-item-info').children('#base-price').text('Base Price: '+ response.base);
+                base = response.base * 10000;
+                $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
+                if( response.sold ) {
+                    sold = response.sold * 10000;
+                    $('.cd-item-info').children('#sold-price').text('Sold Price: ₹ '+ sold);
+                }
+                if( response.status ) {
+                    $('.cd-item-info').children('#status').text('Sold');
+                }else {
+                    $('.cd-item-info').children('#status').text('Not Sold');
+                }
             },
             error: function(xhr, status, errorThrown) {
                 console.log(errorThrown);

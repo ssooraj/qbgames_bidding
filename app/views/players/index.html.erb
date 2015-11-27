@@ -5,7 +5,7 @@
 <ul class="cd-items cd-container">
   <% @list.each do |player| %>
       <li class="cd-item">
-        <img src=<%=player.avatar.medium.url %>   name= <%= player.id %> alt="Item Preview">
+        <img src=<%=player.avatar.url %>   name= <%= player.id %> alt="Item Preview">
         <a href="#0" class="cd-trigger"><%= player.display_name%></a>
       </li> <!-- cd-item -->
   <% end %>
@@ -23,6 +23,11 @@
     <h2></h2>
     <p id="team"></p>
     <p id="base-price"> </p>
+    <p id="sold-price"></p>
+    <p id="status"></p>
+    <img src="" id="cricket" >
+    <img src="" id="football" >
+    <img src="" id="badminton" >
 
   </div> <!-- cd-item-info -->
   <a href="#0" class="cd-close">Close</a>
