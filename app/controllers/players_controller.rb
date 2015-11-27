@@ -8,7 +8,8 @@ class PlayersController < ApplicationController
     p params
     player = Player.find params[:id]
     render json: { success: true,
-                   player_name: player.display_name
+                   player_name: player.display_name,
+                   team_name: player.team.name
            }
   end
 end

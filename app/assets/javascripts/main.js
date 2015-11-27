@@ -8,7 +8,8 @@ jQuery(document).ready(function($){
     $('.cd-trigger').on('click', function(event){
         var selectedImage = $(this).parent('.cd-item').children('img'),
             slectedImageUrl = selectedImage.attr('src');
-        data = {id: $(this).parent('.cd-item').children('img').attr('name')}
+        data = {id: $(this).parent('.cd-item').children('img').attr('name')};
+        animateQuickView(selectedImage, sliderFinalWidth, maxQuickWidth, 'open');
         $.ajax({
             url: '/players/get_player_details',
             crossDomain: true,
@@ -16,6 +17,7 @@ jQuery(document).ready(function($){
             async: false,
             success: function (response) {
                 $('.cd-item-info').children('h2').text(response.player_name);
+                $('.cd-item-info').children('p').text(response.team_name);
             },
             error: function(xhr, status, errorThrown) {
                 console.log(errorThrown);
@@ -23,8 +25,6 @@ jQuery(document).ready(function($){
         });
         $('.cd-slider').children('li').children('img').attr('src', slectedImageUrl);
         $('body').addClass('overlay-layer');
-        animateQuickView(selectedImage, sliderFinalWidth, maxQuickWidth, 'open');
-
         //update the visible slider image in the quick view panel
         //you don't need to implement/use the updateQuickView if retrieving the quick view data with ajax
         updateQuickView(slectedImageUrl);
