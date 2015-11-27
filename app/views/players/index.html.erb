@@ -3,65 +3,13 @@
 </header>
 
 <ul class="cd-items cd-container">
+<% @list.each do |player| %>
   <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
+    <img src=<%=player.avatar.medium.url %>  alt="Item Preview">
     <a href="#0" class="cd-trigger">Quick View</a>
   </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
-
-  <li class="cd-item">
-    <img src="assets/item-1.jpg" alt="Item Preview">
-    <a href="#0" class="cd-trigger">Quick View</a>
-  </li> <!-- cd-item -->
+<% end %>
+  
 </ul> <!-- cd-items -->
 
 <div class="cd-quick-view">
