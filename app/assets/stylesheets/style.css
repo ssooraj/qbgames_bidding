@@ -8,11 +8,15 @@ Primary style
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+.cd-item {background-color: #fff;-webkit-box-shadow: 0px -4px 28px 0px rgb(243, 243, 243);-moz-box-shadow: -8px -4px 38px 0px rgba(115,19,2,1);box-shadow: 0px -4px 28px 0px rgb(255, 255, 255);}
 *::after, *::before {
   content: '';
 }
-
+p#base-price {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
 body {
   font-size: 100%;
   font-family: "PT Sans", sans-serif;
@@ -74,6 +78,8 @@ Modules - reusable parts of our design
 Main components 
 
 -------------------------------- */
+img#cricket,img#football,img#badminton {max-width: 15px;}
+.games {position: absolute;top: 0px;width: 100%;padding: 2px 5px;background-color: rgba(0,0,0,.5);}
 html, body {
   height: 100%;
 }
@@ -146,6 +152,8 @@ header h1 {
     width: 22%;
     float: left;
     margin: 0 4% 2.8em 0;
+    min-height: 250px;
+    background-color: #fff;
   }
   .cd-item:nth-child(2n) {
     margin-right: 4%;
@@ -202,10 +210,12 @@ header h1 {
 @media only screen and (min-width: 1170px) {
   .no-touch .cd-item:hover .cd-trigger {
     opacity: 1;
+
   }
 
   .touch .cd-item .cd-trigger {
     opacity: 1;
+    background-color: rgba(0,0,0,.8);
   }
 }
 .cd-quick-view {
@@ -428,11 +438,14 @@ header h1 {
   -webkit-animation: cd-slide-in 0.3s;
   -moz-animation: cd-slide-in 0.3s;
   animation: cd-slide-in 0.3s;
+  text-transform: uppercase;
 }
 .add-content .cd-item-info p {
   -webkit-animation: cd-slide-in 0.4s;
   -moz-animation: cd-slide-in 0.4s;
   animation: cd-slide-in 0.4s;
+      color: #000;
+    font-size: 18px;
 }
 .add-content .cd-item-info .cd-item-action {
   -webkit-animation: cd-slide-in 0.5s;

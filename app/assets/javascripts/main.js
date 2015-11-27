@@ -111,6 +111,9 @@ jQuery(document).ready(function($){
         //update the image in the gallery
         if( !$('.cd-quick-view').hasClass('velocity-animating') && $('.cd-quick-view').hasClass('add-content')) {
             selectedImage.attr('src', activeSliderUrl);
+            $('.cric-img').attr('src', '/assets/Cricket.png');
+            $('.foot-img').attr('src', '/assets/Soccer.png');
+            $('.bad-img').attr('src', '/assets/Badminton.png');
             animateQuickView(selectedImage, finalWidth, maxQuickWidth, 'close');
         } else {
             closeNoAnimation(selectedImage, finalWidth, maxQuickWidth);
