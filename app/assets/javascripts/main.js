@@ -41,8 +41,10 @@ jQuery(document).ready(function($){
                 }
                 if( response.status ) {
                     $('.cd-item-info').children('#status').text('Sold');
+                    $('.cd-item-info').children('#status').attr('class', 'sold');
                 }else {
                     $('.cd-item-info').children('#status').text('Not Sold');
+                    $('.cd-item-info').children('#status').attr('class', 'notsold');
                 }
             },
             error: function(xhr, status, errorThrown) {
