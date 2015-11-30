@@ -1,15 +1,15 @@
 class PlayersController < ApplicationController
 
   def index
-    @list = Player.all
+    @list = Player.all.paginate(:page => params[:page], :per_page => 12)
+    p @list.count
   end
 
   def get_player_details
-    p params
     player = Player.includes(:team).find params[:id]
     render json: { success: true,
                    player_name: player.display_name,
-                   team_name: player.team.name,
+                   team_name: player.team_name,
                    base: player.base_price,
                    sold: player.sold_price,
                    cricket: player.is_cricket,
@@ -17,5 +17,9 @@ class PlayersController < ApplicationController
                    badminton: player.is_badminton,
                    status: player.is_sold
            }
+  end
+
+  def paginate
+    @list = Player.all.paginate(:page => params[:page], :per_page => 12)
   end
 end

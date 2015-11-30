@@ -13,6 +13,7 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

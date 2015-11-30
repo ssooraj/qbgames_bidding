@@ -17,7 +17,11 @@ jQuery(document).ready(function($){
             async: false,
             success: function (response) {
                 $('.cd-item-info').children('h2').text(response.player_name);
-                $('.cd-item-info').children('#team').text('Team: '+ response.team_name);
+                if( response.team_name != '' ) {
+                    $('.cd-item-info').children('#team').text('Team: '+ response.team_name);
+                }else {
+                    $('.cd-item-info').children('#team').text('');
+                }
                 base = response.base * 10000;
                 $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
                 if( response.cricket ) {
@@ -37,7 +41,7 @@ jQuery(document).ready(function($){
                 }
                 if( response.sold ) {
                     sold = response.sold * 10000;
-                    $('.cd-item-info').children('#sold-price').text('Sold Price: ₹ '+ sold);
+                    $('.cd-item-info').children('#sold-price').text('Sold Price: $ '+ sold);
                 }
                 if( response.status ) {
                     $('.cd-item-info').children('#status').text('Sold');

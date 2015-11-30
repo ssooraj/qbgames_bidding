@@ -5,4 +5,8 @@ class Player < ActiveRecord::Base
 	def display_name
 		"#{first_name}" +' '+"#{last_name}"
 	end
+
+	def team_name
+		team.name rescue ''
+	end
 end

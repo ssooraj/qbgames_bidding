@@ -3,24 +3,7 @@
 </header>
 
 <ul class="cd-items cd-container">
-  <% @list.each do |player| %>
-  <li class="cd-item" style="background:url(<%=player.avatar.url %> );background-size:cover;background-position: center;">
-
-           <img src=<%=player.avatar.url %>   name= <%= player.id %> alt="Item Preview" style="display:none;">  
-          <div class="games">
-          <% if player.is_cricket %> <img class="cric-img" src="/assets/Cricket.png" id="cricket" > <%end%>
-          <% if player.is_football %> <img class="foot-img" src="/assets/Soccer.png" id="football" > <%end%>
-          <% if player.is_badminton %><img class="bad-img" src="/assets/Badminton.png" id="badminton" > <%end%>
-        </div>
-    <div class="content"> 
-
-    </div>
-    <a href="#0" class="cd-trigger">
-      <%= player.display_name%>
-    </a>
-  </li> <!-- cd-item -->
-  <% end %>
-
+  <%= render :partial => '/players/list' %>
 </ul> <!-- cd-items -->
 
 <div class="cd-quick-view">
@@ -43,3 +26,7 @@
   </div> <!-- cd-item-info -->
   <a href="#0" class="cd-close">Close</a>
 </div> <!-- cd-quick-view -->
+
+<div class="pagination_container" style="visibility:hidden">
+  <%= will_paginate @list, :params => { :tab_id => 1} %>
+</div>
