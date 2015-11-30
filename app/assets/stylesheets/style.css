@@ -582,8 +582,8 @@ p#status {
       border:0;
     width: 200px;
     position: absolute;
-    bottom: -31px;
-    right: 153px;
+    bottom: -102px;
+    left: 301px;
     text-align: center;
     text-transform: uppercase;
     padding: 5px 0;
