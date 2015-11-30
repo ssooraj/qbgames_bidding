@@ -26,4 +26,11 @@ class PlayersController < ApplicationController
     @list = Player.where(in_for_auction: true).
         paginate(:page => params[:page], :per_page => 18)
   end
+
+  def player_list
+    @users = Player.all.order(base_price: :desc)
+    respond_to do |format|
+      format.xls
+    end
+  end
 end

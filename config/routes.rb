@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
       collection do
         get :get_player_details
+        get :player_list
       end
     end
 
