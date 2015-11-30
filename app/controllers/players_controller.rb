@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   def index
-    @list = Player.all.paginate(:page => params[:page], :per_page => 12)
+    @list = Player.all.paginate(:page => params[:page], :per_page => 18)
     p @list.count
   end
 
@@ -20,6 +20,6 @@ class PlayersController < ApplicationController
   end
 
   def paginate
-    @list = Player.all.paginate(:page => params[:page], :per_page => 12)
+    @list = Player.all.paginate(:page => params[:page], :per_page => 18)
   end
 end
