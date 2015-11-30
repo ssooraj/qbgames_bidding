@@ -32,22 +32,22 @@ jQuery(document).ready(function($){
                 if( response.cricket ) {
                     $('.cd-item-info').children('#cricket').attr('src', '/assets/Cricket.png');
                 }else {
-                    $('.cd-item-info').children('#cricket').attr('src', '');
+                    $('.cd-item-info').children('#cricket').attr('src', '/assets/blank.png');
                 }
                 if( response.football ) {
                     $('.cd-item-info').children('#football').attr('src', '/assets/Soccer.png');
                 }else {
-                    $('.cd-item-info').children('#football').attr('src', '');
+                    $('.cd-item-info').children('#football').attr('src', '/assets/blank.png');
                 }
                 if( response.badminton ) {
                     $('.cd-item-info').children('#badminton').attr('src', '/assets/Badminton.png');
                 }else {
-                    $('.cd-item-info').children('#badminton').attr('src', '');
+                    $('.cd-item-info').children('#badminton').attr('src', '/assets/blank.png');
                 }
                 if( response.star ) {
                     $('.cd-item-info').children('#stars').attr('src', '/assets/star.png');
                 }else {
-                    $('.cd-item-info').children('#stars').attr('src', '');
+                    $('.cd-item-info').children('#stars').attr('src', '/assets/blank.png');
                 }
                 if( response.sold ) {
                     sold = response.sold;

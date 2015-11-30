@@ -1,0 +1,23 @@
+<% @star.each do |player| %>
+    <% if player.avatar.url.nil? %>
+        <li class="cd-item" style="background:url('assets/face.png');background-size:cover;background-position: center;">
+          <img src='assets/face.png'   name='<%= player.id %>' alt="Item Preview" style="display:none;">
+    <%else%>
+        <li class="cd-item" style="background:url(<%=player.avatar.big.url %> );background-size:cover;background-position: center;">
+          <img src=<%=player.avatar.big.url %>   name='<%= player.id %>' alt="Item Preview" style="display:none;">
+    <%end%>
+
+    <div class="games">
+      <% if player.is_star %><img class="star-img" src="/assets/star.png" id="star" > <%end%>
+      <% if player.is_cricket %> <img class="cric-img" src="/assets/Cricket.png" id="cricket" > <%end%>
+      <% if player.is_football %> <img class="foot-img" src="/assets/Soccer.png" id="football" > <%end%>
+      <% if player.is_badminton %><img class="bad-img" src="/assets/Badminton.png" id="badminton" > <%end%>
+    </div>
+    <div class="content">
+
+    </div>
+    <a href="#0" class="cd-trigger">
+      <%= player.display_name%>
+    </a>
+    </li> <!-- cd-item -->
+<% end %>

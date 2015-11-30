@@ -1,10 +1,29 @@
 <header>
-  <h1 class="main-heading">QB Auction 2015</h1>
+  <h1 class="main-heading">QB Games 2015</h1>
 </header>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Icons</a></li>
+    <li><a href="#tabs-2">Dauntless Guys</a></li>
+    <li><a href="#tabs-3">Peppy Galz</a></li>
+  </ul>
+  <div id="tabs-1">
+    <ul class="cd-items cd-container">
+      <%= render :partial => '/players/star' %>
+    </ul> <!-- cd-items -->
+  </div>
+  <div id="tabs-2">
+    <ul class="cd-items cd-container">
+      <%= render :partial => '/players/guys' %>
+    </ul> <!-- cd-items -->
+  </div>
+  <div id="tabs-3">
+    <ul class="cd-items cd-container">
+      <%= render :partial => '/players/galz' %>
+    </ul> <!-- cd-items -->
+  </div>
+</div>
 
-<ul class="cd-items cd-container">
-  <%= render :partial => '/players/list' %>
-</ul> <!-- cd-items -->
 
 <div class="cd-quick-view">
   <div class="cd-slider-wrapper">
@@ -20,10 +39,10 @@
     <p id="base-price"> </p>
     <p id="sold-price"></p>
     <p id="status" class=""></p>
-    <img src="" id="cricket" >
-    <img src="" id="football" >
-    <img src="" id="badminton" >
-    <img src="" id="stars" >
+    <img src="/assets/blank.png" id="cricket" >
+    <img src="/assets/blank.png" id="football" >
+    <img src="/assets/blank.png" id="badminton" >
+    <img src="/assets/blank.png" id="stars" >
 
 
   </div> <!-- cd-item-info -->
