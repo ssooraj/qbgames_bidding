@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
                 }else {
                     $('.cd-item-info').children('#team').text('');
                 }
-                base = response.base * 10000;
+                base = response.base;
                 $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
                 if( response.cricket ) {
                     $('.cd-item-info').children('#cricket').attr('src', '/assets/Cricket.png');
@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#badminton').attr('src', '');
                 }
                 if( response.sold ) {
-                    sold = response.sold * 10000;
+                    sold = response.sold;
                     $('.cd-item-info').children('#sold-price').text('Sold Price: $ '+ sold);
                 }
                 if( response.status ) {

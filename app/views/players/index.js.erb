@@ -1,9 +1,9 @@
 $(".cd-container").append('<%= j render :partial => 'list' %>');
 <% if @list.next_page %>
 <% if @key %>
-$('.pagination').replaceWith('<%= j will_paginate @users %>');
+$('.pagination').replaceWith('<%= j will_paginate @list %>');
 <% else %>
-$('.pagination').replaceWith('<%= j will_paginate @users %>');
+$('.pagination').replaceWith('<%= j will_paginate @list %>');
 <% end %>
 <% else %>
 $('.pagination').remove();
