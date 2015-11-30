@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
         maxQuickWidth = 900;
 
     //open the quick view panel
-    $('.cd-trigger').on('click', function(event){
+    $('body').on('click','.cd-trigger' ,function(event){
         var selectedImage = $(this).parent('.cd-item').children('img'),
             slectedImageUrl = selectedImage.attr('src');
         data = {id: $(this).parent('.cd-item').children('img').attr('name')};
