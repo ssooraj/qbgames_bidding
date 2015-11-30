@@ -39,6 +39,11 @@ jQuery(document).ready(function($){
                 }else {
                     $('.cd-item-info').children('#badminton').attr('src', '');
                 }
+                if( response.star ) {
+                    $('.cd-item-info').children('#star').attr('src', '/assets/Badminton.png');
+                }else {
+                    $('.cd-item-info').children('#star').attr('src', '');
+                }
                 if( response.sold ) {
                     sold = response.sold;
                     $('.cd-item-info').children('#sold-price').text('Sold Price: $ '+ sold);
