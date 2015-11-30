@@ -587,3 +587,13 @@ p#status {
 }
 .sold{background-color:  red;}
 .notsold{background-color: green;}
+.cd-item-info #stars {
+    position: absolute;
+    top: 46px;
+    right: 66px;
+    max-width: 70px;
+}
+.cd-item-info img#cricket,.cd-item-info img#football,.cd-item-info img#badminton {
+    max-width: 20px;
+    margin-right: 5px;
+}
