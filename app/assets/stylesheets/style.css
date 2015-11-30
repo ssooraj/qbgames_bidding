@@ -606,3 +606,13 @@ p#status {
     max-width: 20px;
     margin-right: 5px;
 }
+.ui-widget-content {
+    color: #222222;
+    border: 0 !important;
+    background: none !important;
+}
+.ui-widget-header {
+    border: 0 !important;
+    background: none !important;
+    overflow: hidden !important;
+}
