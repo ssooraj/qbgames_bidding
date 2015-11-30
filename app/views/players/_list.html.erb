@@ -1,17 +1,20 @@
 <% @list.each do |player| %>
-    <li class="cd-item" style="background:url(<%=player.avatar.url %> );background-size:cover;background-position: center;">
+    <% if player.avatar.url.nil? %>
+        <li class="cd-item" style="background:url('assets/face.png');background-size:cover;background-position: center;">
+    <%else%>
+        <li class="cd-item" style="background:url(<%=player.avatar.url %> );background-size:cover;background-position: center;">
+    <%end%>
+    <img src=<%=player.avatar.url %>   name= <%= player.id %> alt="Item Preview" style="display:none;">
+    <div class="games">
+      <% if player.is_cricket %> <img class="cric-img" src="/assets/Cricket.png" id="cricket" > <%end%>
+      <% if player.is_football %> <img class="foot-img" src="/assets/Soccer.png" id="football" > <%end%>
+      <% if player.is_badminton %><img class="bad-img" src="/assets/Badminton.png" id="badminton" > <%end%>
+    </div>
+    <div class="content">
 
-      <img src=<%=player.avatar.url %>   name= <%= player.id %> alt="Item Preview" style="display:none;">
-      <div class="games">
-        <% if player.is_cricket %> <img class="cric-img" src="/assets/Cricket.png" id="cricket" > <%end%>
-        <% if player.is_football %> <img class="foot-img" src="/assets/Soccer.png" id="football" > <%end%>
-        <% if player.is_badminton %><img class="bad-img" src="/assets/Badminton.png" id="badminton" > <%end%>
-      </div>
-      <div class="content">
-
-      </div>
-      <a href="#0" class="cd-trigger">
-        <%= player.display_name%>
-      </a>
+    </div>
+    <a href="#0" class="cd-trigger">
+      <%= player.display_name%>
+    </a>
     </li> <!-- cd-item -->
 <% end %>
