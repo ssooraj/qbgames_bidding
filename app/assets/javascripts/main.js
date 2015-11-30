@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#badminton').attr('src', '');
                 }
                 if( response.star ) {
-                    $('.cd-item-info').children('#star').attr('src', '/assets/Badminton.png');
+                    $('.cd-item-info').children('#star').attr('src', '/assets/star.png');
                 }else {
                     $('.cd-item-info').children('#star').attr('src', '');
                 }
