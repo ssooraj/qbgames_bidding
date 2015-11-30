@@ -306,6 +306,8 @@ a.cd-trigger {
   display: block;
   width: 100%;
   max-width: 400px;
+  min-height: 280px;
+    width: auto;
 }
 .cd-slider li.selected {
   position: relative;
