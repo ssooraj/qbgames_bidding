@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   def index
-    @list = Player.where(in_for_auction: true).order(base_price: :desc)
+    @list = Player.where(in_for_auction: true).order(base_price: :desc).order(:is_star)
   end
 
   def get_player_details
