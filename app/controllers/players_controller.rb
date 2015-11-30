@@ -1,7 +1,8 @@
 class PlayersController < ApplicationController
 
   def index
-    @list = Player.all
+    @list = Player.where(in_for_auction: true).
+        paginate(:page => params[:page], :per_page => 18)
     p @list.count
   end
 
@@ -20,6 +21,7 @@ class PlayersController < ApplicationController
   end
 
   def paginate
-    @list = Player.all.paginate(:page => params[:page], :per_page => 18)
+    @list = Player.where(in_for_auction: true).
+        paginate(:page => params[:page], :per_page => 18)
   end
 end

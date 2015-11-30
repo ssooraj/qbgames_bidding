@@ -16,8 +16,10 @@ task :mani => [:environment] do
           is_cricket: row[2],
           is_football: row[3],
           is_badminton: row[4],
-          base_price: row[5],
-          is_star: row[6]
+          sex: row[5],
+          base_price: row[6],
+          in_for_auction: row[7],
+          is_star: row[9]
       )
     player.save!
   end

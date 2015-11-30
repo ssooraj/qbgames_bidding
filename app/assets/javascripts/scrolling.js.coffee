@@ -9,6 +9,6 @@ jQuery ->
     if url &&  $(window).scrollTop() > $(document).height() - $(window).height() - 50
       $('.pagination').css('visibility', 'visible')
       $('.pagination').text('Loading more...')
-      sleep 1000
+      sleep 500
       $.getScript(url)
 
