@@ -45,9 +45,9 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#badminton').attr('src', '');
                 }
                 if( response.star ) {
-                    $('.cd-item-info').children('#star').attr('src', '/assets/star.png');
+                    $('.cd-item-info').children('#stars').attr('src', '/assets/star.png');
                 }else {
-                    $('.cd-item-info').children('#star').attr('src', '');
+                    $('.cd-item-info').children('#stars').attr('src', '');
                 }
                 if( response.sold ) {
                     sold = response.sold;
@@ -130,6 +130,7 @@ jQuery(document).ready(function($){
             $('.cric-img').attr('src', '/assets/Cricket.png');
             $('.foot-img').attr('src', '/assets/Soccer.png');
             $('.bad-img').attr('src', '/assets/Badminton.png');
+            $('.star-img').attr('src', '/assets/star.png');
             animateQuickView(selectedImage, finalWidth, maxQuickWidth, 'close');
         } else {
             closeNoAnimation(selectedImage, finalWidth, maxQuickWidth);

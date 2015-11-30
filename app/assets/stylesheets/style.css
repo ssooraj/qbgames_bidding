@@ -79,7 +79,13 @@ Main components
 
 -------------------------------- */
 img#cricket,img#football,img#badminton {max-width: 15px;}
-img#star{max-width: 20px;}
+
+img#star {
+    max-width: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .games {position: absolute;top: 0px;width: 100%;padding: 2px 5px;background-color: rgba(0,0,0,.5);}
 html, body {
   height: 100%;
