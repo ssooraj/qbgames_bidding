@@ -19,11 +19,11 @@
           <Row>
             <Cell><Data ss:Type="String"><%= user.first_name %></Data></Cell>
             <Cell><Data ss:Type="String"><%= user.last_name %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= user.is_star %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= 'Yes' if user.is_star %></Data></Cell>
             <Cell><Data ss:Type="String"><%= user.base_price %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= user.is_cricket %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= user.is_football %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= user.is_badminton %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= 'Yes' if  user.is_cricket %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= 'Yes' if user.is_football %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= 'Yes' if user.is_badminton %></Data></Cell>
           </Row>
       <% end %>
     </Table>
