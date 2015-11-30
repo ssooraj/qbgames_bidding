@@ -17,6 +17,11 @@ jQuery(document).ready(function($){
             async: false,
             success: function (response) {
                 $('.cd-item-info').children('h2').text(response.player_name);
+                if( response.sex != '' ) {
+                    $('.cd-item-info').children('#sex').text(response.sex);
+                }else {
+                    $('.cd-item-info').children('#sex').text('');
+                }
                 if( response.team_name != '' ) {
                     $('.cd-item-info').children('#team').text('Team: '+ response.team_name);
                 }else {
