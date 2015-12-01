@@ -17,6 +17,9 @@ jQuery(document).ready(function($){
             async: false,
             success: function (response) {
                 $('.cd-item-info').children('h2').text(response.player_name);
+                $('.cd-item-info').children('#cricket').remove();
+                $('.cd-item-info').children('#football').remove();
+                $('.cd-item-info').children('#badminton').remove();
                 if( response.sex != '' ) {
                     $('.cd-item-info').children('#sex').text(response.sex);
                 }else {
@@ -30,19 +33,23 @@ jQuery(document).ready(function($){
                 base = response.base;
                 $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
                 if( response.cricket ) {
+                    $('.cd-item-info').append('<img src="/assets/blank.png" id="cricket" >');
                     $('.cd-item-info').children('#cricket').attr('src', '/assets/Cricket.png');
                 }else {
-                    $('.cd-item-info').children('#cricket').attr('src', '/assets/blank.png');
+                    $('.cd-item-info').children('#cricket').remove();
                 }
                 if( response.football ) {
+                    console.log(response);
+                    $('.cd-item-info').append('<img src="/assets/blank.png" id="football" >');
                     $('.cd-item-info').children('#football').attr('src', '/assets/Soccer.png');
                 }else {
-                    $('.cd-item-info').children('#football').attr('src', '/assets/blank.png');
+                    $('.cd-item-info').children('#football').remove();
                 }
                 if( response.badminton ) {
+                    $('.cd-item-info').append('<img src="/assets/blank.png" id="badminton" >');
                     $('.cd-item-info').children('#badminton').attr('src', '/assets/Badminton.png');
                 }else {
-                    $('.cd-item-info').children('#badminton').attr('src', '/assets/blank.png');
+                    $('.cd-item-info').children('#badminton').remove();
                 }
                 if( response.star ) {
                     $('.cd-item-info').children('#stars').attr('src', '/assets/star.png');
