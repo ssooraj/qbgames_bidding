@@ -190,13 +190,13 @@ jQuery(document).ready(function($){
                 'top': finalTop+ 'px',
                 'left': finalLeft+'px',
                 'width': finalWidth+'px',
-            }, 100, 'ease', function(){
+            }, 50, 'ease', function(){
                 $('body').removeClass('overlay-layer');
                 $('.cd-quick-view').removeClass('animate-width').velocity({
                     "top": topSelected,
                     "left": leftSelected,
                     "width": widthSelected,
-                }, 100, 'ease', function(){
+                }, 50, 'ease', function(){
                     $('.cd-quick-view').removeClass('is-visible');
                     parentListItem.removeClass('empty-box');
                 });
