@@ -174,12 +174,12 @@ jQuery(document).ready(function($){
                 'top': finalTop+ 'px',
                 'left': finalLeft+'px',
                 'width': finalWidth+'px',
-            }, 1000, [ 400, 20 ], function(){
+            }, 100, [ 100, 10 ], function(){
                 //animate the quick view: animate its width to the final value
                 $('.cd-quick-view').addClass('animate-width').velocity({
                     'left': quickViewLeft+'px',
                     'width': quickViewWidth+'px',
-                }, 300, 'ease' ,function(){
+                }, 200, 'ease' ,function(){
                     //show quick view content
                     $('.cd-quick-view').addClass('add-content');
                 });
@@ -190,13 +190,13 @@ jQuery(document).ready(function($){
                 'top': finalTop+ 'px',
                 'left': finalLeft+'px',
                 'width': finalWidth+'px',
-            }, 300, 'ease', function(){
+            }, 100, 'ease', function(){
                 $('body').removeClass('overlay-layer');
                 $('.cd-quick-view').removeClass('animate-width').velocity({
                     "top": topSelected,
                     "left": leftSelected,
                     "width": widthSelected,
-                }, 500, 'ease', function(){
+                }, 100, 'ease', function(){
                     $('.cd-quick-view').removeClass('is-visible');
                     parentListItem.removeClass('empty-box');
                 });
