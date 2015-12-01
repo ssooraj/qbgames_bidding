@@ -1,31 +1,22 @@
-<?xml version="1.0"?>
-<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
-          xmlns:o="urn:schemas-microsoft-com:office:office"
-          xmlns:x="urn:schemas-microsoft-com:office:excel"
-          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
-          xmlns:html="http://www.w3.org/TR/REC-html40">
-  <Worksheet ss:Name="Sheet1">
-    <Table>
-      <Row>
-        <Cell><Data ss:Type="String">First Name</Data></Cell>
-        <Cell><Data ss:Type="String">Last Name / Business Name</Data></Cell>
-        <Cell><Data ss:Type="String">Icon Player</Data></Cell>
-        <Cell><Data ss:Type="String">Base Price</Data></Cell>
-        <Cell><Data ss:Type="String">Cricket</Data></Cell>
-        <Cell><Data ss:Type="String">Football</Data></Cell>
-        <Cell><Data ss:Type="String">Badminton</Data></Cell>
-      </Row>
-      <% @users.each do |user| %>
-          <Row>
-            <Cell><Data ss:Type="String"><%= user.first_name %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= user.last_name %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= 'Yes' if user.is_star %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= user.base_price %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= 'Yes' if  user.is_cricket %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= 'Yes' if user.is_football %></Data></Cell>
-            <Cell><Data ss:Type="String"><%= 'Yes' if user.is_badminton %></Data></Cell>
-          </Row>
-      <% end %>
-    </Table>
-  </Worksheet>
-</Workbook>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name / Business Name</th>
+    <th>Icon Player</th>
+    <th>Base Price</th>
+    <th>Cricket</th>
+    <th>Football</th>
+    <th>Badminton</th>
+  </tr>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= 'Yes' if user.is_star %></td>
+        <td><%= user.base_price %></td>
+        <td><%= 'Yes' if  user.is_cricket %></td>
+        <td><%= 'Yes' if user.is_football %></td>
+        <td><%= 'Yes' if user.is_badminton %></td>
+      </tr>
+  <% end %>
+</table>
