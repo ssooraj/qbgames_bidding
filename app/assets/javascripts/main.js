@@ -174,7 +174,7 @@ jQuery(document).ready(function($){
                 'top': finalTop+ 'px',
                 'left': finalLeft+'px',
                 'width': finalWidth+'px',
-            }, 100, [ 100, 10 ], function(){
+            }, 100, [ 50, 5 ], function(){
                 //animate the quick view: animate its width to the final value
                 $('.cd-quick-view').addClass('animate-width').velocity({
                     'left': quickViewLeft+'px',
