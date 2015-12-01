@@ -1,5 +1,8 @@
 class Player < ActiveRecord::Base
 	belongs_to :team
+	has_one :managing_team, class_name: 'Team', foreign_key: 'manager_id'
+	has_one :cricket_team, class_name: 'Team', foreign_key: 'cricket_captain_id'
+	has_one :football_team, class_name: 'Team', foreign_key: 'football_captain_id'
 	mount_uploader :avatar, AvatarUploader
 
 	def display_name
