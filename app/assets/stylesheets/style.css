@@ -184,13 +184,13 @@ header h1 {
         background-color: #392c3f;
     }
 }
-a.cd-trigger {
+a.cd-trigger, a.cd-trigger1 {
     text-decoration: none;
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
 }
-.cd-trigger {
+.cd-trigger, .cd-trigger1 {
     position: absolute;
     height: 50px;
     line-height: 50px;
@@ -212,14 +212,14 @@ a.cd-trigger {
     background: rgba(0, 0, 0, 0.8);
 }
 @media only screen and (min-width: 1024px) {
-    .cd-trigger {
+    .cd-trigger, .cd-trigger1 {
         /* always visible on small devices */
         visibility: visible;
         opacity: 1;
     }
 }
 @media only screen and (min-width: 1170px) {
-    .cd-trigger {
+    .cd-trigger, .cd-trigger1 {
         /* only visible on hover on big devices */
         opacity: 0;
     }
@@ -235,8 +235,21 @@ a.cd-trigger {
         text-decoration: none;
 
     }
+    .no-touch .cd-item:hover .cd-trigger1 {
+        opacity: 1;
+        background-color: rgba(0,0,0,.8);
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 13px;
+        text-decoration: none;
+
+    }
 
     .touch .cd-item .cd-trigger {
+        opacity: 1;
+        background-color: rgba(0,0,0,.8);
+    }
+    .touch .cd-item .cd-trigger1 {
         opacity: 1;
         background-color: rgba(0,0,0,.8);
     }
@@ -578,7 +591,7 @@ a.cd-trigger {
     transition: transform .3s 0s, visibility 0s 0s;
 }
 @media only screen and (max-width: 1024px) {
-    a.cd-trigger {opacity: 1;visibility: visible;}
+    a.cd-trigger, a.cd-trigger1 {opacity: 1;visibility: visible;}
 }
 p#status {
     border:0;
@@ -724,7 +737,7 @@ p#status {
     vertical-align: baseline;
     width: 220px;
 }
-.cd-item1:hover  .cd-trigger{
+.cd-item1:hover  .cd-trigger1{
     opacity: 1;
     color: white;
 }
