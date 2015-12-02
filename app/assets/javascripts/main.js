@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
     $('body').on('click','.cd-trigger' ,function(event){
         var selectedImage = $(this).parent('.cd-item').children('img'),
             slectedImageUrl = selectedImage.attr('src');
+        console.log(slectedImageUrl);
         data = {id: $(this).parent('.cd-item').children('img').attr('name')};
         animateQuickView(selectedImage, sliderFinalWidth, maxQuickWidth, 'open');
         $.ajax({
@@ -22,6 +23,7 @@ jQuery(document).ready(function($){
                 $('.cd-item-info').children('#badminton').remove();
                 $('.cd-item-info').children('#status').remove();
                 $('.cd-item-info').children('#base-price').remove();
+                $('.cd-item-info').children('#sold-price').remove();
                 if( response.sex != '' ) {
                     $('.cd-item-info').children('#sex').text(response.sex);
                 }else {
@@ -38,6 +40,13 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
                 }else{
                     $('.cd-item-info').append('<p id="base-price"> </p>');
+                }
+                if( response.sold ) {
+                    sold = response.sold;
+                    $('.cd-item-info').append('<p id="sold-price"> </p>');
+                    $('.cd-item-info').children('#sold-price').text('Sold Price: $ '+ sold);
+                }else {
+                    $('.cd-item-info').append('<p id="sold-price"> </p>');
                 }
                 if( response.cricket ) {
                     $('.cd-item-info').append('<img src="/assets/blank.png" id="cricket" >');
@@ -63,10 +72,6 @@ jQuery(document).ready(function($){
                 }else {
                     $('.cd-item-info').children('#stars').attr('src', '/assets/blank.png');
                 }
-                if( response.sold ) {
-                    sold = response.sold;
-                    $('.cd-item-info').children('#sold-price').text('Sold Price: $ '+ sold);
-                }
                 if( response.status ) {
                     $('.cd-item-info').append('<p id="status" class=""></p>');
                     $('.cd-item-info').children('#status').text('Sold');
@@ -89,8 +94,41 @@ jQuery(document).ready(function($){
     });
 
     $('body').on('click','.add_mod_star' ,function(event) {
-        alert("jga");
         data = {type: 'Star', current: 0};
+        $.ajax({
+            url: '/players/get_player_for_auction',
+            crossDomain: true,
+            data: data,
+            async: false,
+            success: function (response) {
+                var x = document.getElementsByName(response.id);
+                $(x[0]).parent('.cd-item').children('.cd-trigger')[0].click();
+            },
+            error: function (xhr, status, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    });
+
+    $('body').on('click','.add_mod_guyz' ,function(event) {
+        data = {type: 'Guy', current: 0};
+        $.ajax({
+            url: '/players/get_player_for_auction',
+            crossDomain: true,
+            data: data,
+            async: false,
+            success: function (response) {
+                var x = document.getElementsByName(response.id);
+                $(x[0]).parent('.cd-item').children('.cd-trigger')[0].click();
+            },
+            error: function (xhr, status, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    });
+
+    $('body').on('click','.add_mod_galz' ,function(event) {
+        data = {type: 'Gal', current: 0};
         $.ajax({
             url: '/players/get_player_for_auction',
             crossDomain: true,

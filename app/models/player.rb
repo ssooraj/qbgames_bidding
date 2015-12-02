@@ -36,4 +36,33 @@ class Player < ActiveRecord::Base
 		end
 		p player
 	end
+
+
+	def self.get_guy params
+		if params[:current].to_i == 0
+			offset = Player.where(is_sold: false, not_sold: false,is_star:false, sex:'Dauntless Guy').collect(&:id).sample
+			return  Player.find offset
+		else
+			current = Player.find params[:current]
+			current.not_sold = true
+			current.save
+			offset = Player.where(is_sold: false, not_sold: false,is_star:true).collect(&:id).sample
+			player = Player.where(is_sold: false, not_sold: false,is_star:true).offset(offset).first
+		end
+		p player
+	end
+
+	def self.get_gal params
+		if params[:current].to_i == 0
+			offset = Player.where(is_sold: false, not_sold: false,is_star:false, sex:'Peppy Gal').collect(&:id).sample
+			return  Player.find offset
+		else
+			current = Player.find params[:current]
+			current.not_sold = true
+			current.save
+			offset = Player.where(is_sold: false, not_sold: false,is_star:true).collect(&:id).sample
+			player = Player.where(is_sold: false, not_sold: false,is_star:true).offset(offset).first
+		end
+		p player
+	end
 end

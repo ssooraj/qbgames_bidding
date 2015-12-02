@@ -36,13 +36,13 @@ class PlayersController < ApplicationController
   end
 
   def get_player_for_auction
-    case params[:type]
+    player = case params[:type]
       when 'Star'
-     player =  Player.get_star params
+        Player.get_star params
       when 'Guy'
-        Player.get_guy
+        Player.get_guy params
       when 'Gal'
-        Player.get_gal
+        Player.get_gal params
     end
     render json: { success: true,
                    id: player.id,
