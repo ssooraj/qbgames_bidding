@@ -1,6 +1,6 @@
 ActiveAdmin.register Team do
   permit_params :name, :cricket_captain_id,
-                :football_captain_id, :manager_id
+                :football_captain_id, :owner_id, :co_owner_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
