@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       collection do
         get :get_player_details
         get :player_list
+        get :get_player_for_auction
       end
     end
 

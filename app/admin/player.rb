@@ -1,7 +1,7 @@
 ActiveAdmin.register Player do
   permit_params :first_name, :last_name, :is_sold, :team_id, :created_at, :updated_at, :avatar,
                 :is_cricket, :is_football, :is_badminton, :base_price, :sold_price, :is_star,
-                :sex, :in_for_auction
+                :sex, :in_for_auction, :not_sold
 
   show do
     panel "Contents" do

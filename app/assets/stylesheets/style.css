@@ -658,8 +658,8 @@ p#status {
 
 .add_mod a {
     position: absolute;
-    left: 1030px;
-    top: 160px;
+    left: 73%;
+    top: 0%;
     font-weight: bold;
     font-size: 1.0em;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

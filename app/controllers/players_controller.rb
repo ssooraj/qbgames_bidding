@@ -34,4 +34,28 @@ class PlayersController < ApplicationController
       format.xls
     end
   end
+
+  def get_player_for_auction
+    case params[:type]
+      when 'Star'
+     player =  Player.get_star params
+      when 'Guy'
+        Player.get_guy
+      when 'Gal'
+        Player.get_gal
+    end
+    render json: { success: true,
+                   id: player.id,
+                   player_name: player.display_name,
+                   team_name: player.team_name,
+                   base: player.base_price,
+                   sold: player.sold_price,
+                   cricket: player.is_cricket,
+                   football: player.is_football,
+                   badminton: player.is_badminton,
+                   status: player.is_sold,
+                   star: player.is_star,
+                   sex: player.sex
+           }
+  end
 end

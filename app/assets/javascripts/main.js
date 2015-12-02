@@ -88,6 +88,24 @@ jQuery(document).ready(function($){
         updateQuickView(slectedImageUrl);
     });
 
+    $('body').on('click','.add_mod_star' ,function(event) {
+        alert("jga");
+        data = {type: 'Star', current: 0};
+        $.ajax({
+            url: '/players/get_player_for_auction',
+            crossDomain: true,
+            data: data,
+            async: false,
+            success: function (response) {
+                var x = document.getElementsByName(response.id);
+                $(x[0]).parent('.cd-item').children('.cd-trigger')[0].click();
+            },
+            error: function (xhr, status, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    });
+
     //close the quick view panel
     $('body').on('click', function(event){
         if( $(event.target).is('.cd-close') || $(event.target).is('body.overlay-layer')) {
@@ -227,4 +245,6 @@ jQuery(document).ready(function($){
             "width": widthSelected,
         });
     }
+
+
 });
