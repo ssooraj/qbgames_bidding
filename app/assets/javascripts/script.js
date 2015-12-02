@@ -20,6 +20,8 @@ jQuery(document).ready(function($){
                 $('.cd-item-info').children('#cricket').remove();
                 $('.cd-item-info').children('#football').remove();
                 $('.cd-item-info').children('#badminton').remove();
+                $('.cd-item-info').children('#status').remove();
+                $('.cd-item-info').children('#base-price').remove();
                 if( response.sex != '' ) {
                     $('.cd-item-info').children('#sex').text(response.sex);
                 }else {
@@ -32,9 +34,11 @@ jQuery(document).ready(function($){
                 }
                 base = response.base;
                 if( response.base ) {
+                    $('.cd-item-info').append('<p id="base-price"> </p>');
                     $('.cd-item-info').children('#base-price').text('Base Price: $ '+ base);
+                }else{
+                    $('.cd-item-info').append('<p id="base-price"> </p>');
                 }
-
                 if( response.cricket ) {
                     $('.cd-item-info').append('<img src="/assets/blank.png" id="cricket" >');
                     $('.cd-item-info').children('#cricket').attr('src', '/assets/Cricket.png');
@@ -64,10 +68,11 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#sold-price').text('Sold Price: $ '+ sold);
                 }
                 if( response.status ) {
-
+                    $('.cd-item-info').append('<p id="status" class=""></p>');
                     $('.cd-item-info').children('#status').remove();
                     //$('.cd-item-info').children('#status').attr('class', 'sold');
                 }else {
+                    $('.cd-item-info').append('<p id="status" class=""></p>');
                     $('.cd-item-info').children('#status').remove();
                     //$('.cd-item-info').children('#status').attr('class', 'notsold');
                 }
