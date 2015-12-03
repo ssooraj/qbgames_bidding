@@ -3,6 +3,20 @@ ActiveAdmin.register Player do
                 :is_cricket, :is_football, :is_badminton, :base_price, :sold_price, :is_star,
                 :sex, :in_for_auction, :not_sold
 
+  collection_action :refresh_unsold, method: :post do
+    players = Player.where(is_sold: false, not_sold: true,in_for_auction:true)
+    players.each do |player|
+      player.not_sold = false
+      player.base_price = 10
+      player.save
+    end
+    redirect_to admin_players_path, notice: "CSV imported successfully!"
+  end
+
+  action_item only: :index do
+    link_to 'Refresh Unsold', refresh_unsold_admin_players_path, method: :post
+  end
+
   show do
     panel "Contents" do
       tabs do
