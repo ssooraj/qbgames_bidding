@@ -29,8 +29,6 @@ class Player < ActiveRecord::Base
 			return  Player.find offset
 		else
 			current = Player.find params[:current]
-			current.not_sold = true
-			current.save
 			offset = Player.where(is_sold: false, not_sold: false,is_star:true).collect(&:id).sample
 			player = Player.where(is_sold: false, not_sold: false,is_star:true).offset(offset).first
 		end
@@ -44,8 +42,6 @@ class Player < ActiveRecord::Base
 			return  Player.find offset
 		else
 			current = Player.find params[:current]
-			current.not_sold = true
-			current.save
 			offset = Player.where(is_sold: false, not_sold: false,is_star:true).collect(&:id).sample
 			player = Player.where(is_sold: false, not_sold: false,is_star:true).offset(offset).first
 		end
@@ -58,8 +54,6 @@ class Player < ActiveRecord::Base
 			return  Player.find offset
 		else
 			current = Player.find params[:current]
-			current.not_sold = true
-			current.save
 			offset = Player.where(is_sold: false, not_sold: false,is_star:true).collect(&:id).sample
 			player = Player.where(is_sold: false, not_sold: false,is_star:true).offset(offset).first
 		end

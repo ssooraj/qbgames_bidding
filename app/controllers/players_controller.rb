@@ -10,6 +10,7 @@ class PlayersController < ApplicationController
   def get_player_details
     player = Player.includes(:team).find params[:id]
     render json: { success: true,
+                   id: player.id,
                    player_name: player.display_name,
                    team_name: player.team_name,
                    base: player.base_price,

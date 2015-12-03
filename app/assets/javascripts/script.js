@@ -21,7 +21,9 @@ jQuery(document).ready(function($){
                 $('.cd-item-info').children('#football').remove();
                 $('.cd-item-info').children('#badminton').remove();
                 $('.cd-item-info').children('#status').remove();
+                $('.cd-item-info').children('#next').remove();
                 $('.cd-item-info').children('#base-price').remove();
+                $('.cd-item-info').children('#player_id').text(response.id);
                 if( response.sex != '' ) {
                     $('.cd-item-info').children('#sex').text(response.sex);
                 }else {

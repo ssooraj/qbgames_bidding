@@ -22,8 +22,10 @@ jQuery(document).ready(function($){
                 $('.cd-item-info').children('#football').remove();
                 $('.cd-item-info').children('#badminton').remove();
                 $('.cd-item-info').children('#status').remove();
+                $('.cd-item-info').children('#next').remove();
                 $('.cd-item-info').children('#base-price').remove();
                 $('.cd-item-info').children('#sold-price').remove();
+                $('.cd-item-info').children('#player_id').text(response.id);
                 if( response.sex != '' ) {
                     $('.cd-item-info').children('#sex').text(response.sex);
                 }else {
@@ -81,6 +83,9 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#status').text('Not Sold');
                     $('.cd-item-info').children('#status').attr('class', 'notsold');
                 }
+                $('.cd-item-info').append('<p id="next" class=""></p>');
+                $('.cd-item-info').children('#next').text('Random');
+                $('.cd-item-info').children('#next').attr('class', 'sold');
             },
             error: function(xhr, status, errorThrown) {
                 console.log(errorThrown);
@@ -91,6 +96,35 @@ jQuery(document).ready(function($){
         //update the visible slider image in the quick view panel
         //you don't need to implement/use the updateQuickView if retrieving the quick view data with ajax
         updateQuickView(slectedImageUrl);
+    });
+
+    $('body').on('click','#next' ,function(event) {
+        var x = $('.ui-tabs-nav').find('[aria-selected= true]');
+        var division = x.children('a').attr('href');
+        switch(division) {
+            case "#tabs-1":
+                data = {type: 'Star', current: 0};
+                break;
+            case "#tabs-2":
+                data = {type: 'Guy', current: 0};
+                break;
+            case "#tabs-3":
+                data = {type: 'Gal', current: 0};
+                break;
+        }
+        $.ajax({
+            url: '/players/get_player_for_auction',
+            crossDomain: true,
+            data: data,
+            async: false,
+            success: function (response) {
+                var x = document.getElementsByName(response.id);
+                $(x[0]).parent('.cd-item').children('.cd-trigger')[0].click();
+            },
+            error: function (xhr, status, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
     });
 
     $('body').on('click','.add_mod_star' ,function(event) {

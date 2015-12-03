@@ -597,7 +597,22 @@ p#status {
     border:0;
     width: 200px;
     position: absolute;
-    bottom: -74px !important;
+    bottom: -90 px !important;
+    right: 34px !important;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 0;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 0px #fff;
+}
+
+p#next {
+    border:0;
+    width: 200px;
+    position: absolute;
+    bottom: -84px !important;
     right: 34px !important;
     text-align: center;
     text-transform: uppercase;
