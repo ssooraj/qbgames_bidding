@@ -774,3 +774,8 @@ footer {
     margin-bottom: 20px;
     text-align: right;
 }
+
+
+div#tabs {
+    min-height: 428px;
+}
