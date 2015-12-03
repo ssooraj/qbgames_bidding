@@ -63,12 +63,27 @@
     <img src="/assets/blank.png" id="stars" >
 
 
-  </p> <!-- cd-item-info -->
-  <a href="#0" class="cd-close">Close</a>
-</div> <!-- cd-quick-view -->
+    </p> <!-- cd-item-info -->
+    <a href="#0" class="cd-close">Close</a>
+  </div> <!-- cd-quick-view -->
+  </div>
+  <script type="text/javascript">
 
-<div class="pagination_container" style="visibility:hidden">
-  <%#= will_paginate @list, :params => { :tab_id => 1} %>
-</div>
+      $(document).ready(function () {
+          setInterval(function () {
+              $.ajax({
+                  url: '/players/update_sold',
+                  crossDomain: true,
+                  data: {id: 'no'},
+                  async: false,
+                  success: function (response) {
+                      $("#tabs-5 .cd-container").html(response.html);
+                  },
+                  error: function (xhr, status, errorThrown) {
+                      console.log(errorThrown);
+                  }
+              });
+          }, 10000);
 
-
+      });
+  </script>

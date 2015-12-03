@@ -39,13 +39,13 @@ class PlayersController < ApplicationController
 
   def get_player_for_auction
     player = case params[:type]
-      when 'Star'
-        Player.get_star params
-      when 'Guy'
-        Player.get_guy params
-      when 'Gal'
-        Player.get_gal params
-    end
+               when 'Star'
+                 Player.get_star params
+               when 'Guy'
+                 Player.get_guy params
+               when 'Gal'
+                 Player.get_gal params
+             end
     render json: { success: true,
                    id: player.id,
                    player_name: player.display_name,
@@ -59,5 +59,10 @@ class PlayersController < ApplicationController
                    star: player.is_star,
                    sex: player.sex
            }
+  end
+
+  def update_sold
+    @sold =  Player.where(is_sold: true).where('sold_price is NOT NULL').order(sold_price: :desc)
+    render :json => {:html => render_to_string(:partial => '/players/sold')}.to_json
   end
 end
