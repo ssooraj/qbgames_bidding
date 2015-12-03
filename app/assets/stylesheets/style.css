@@ -621,6 +621,7 @@ p#next {
     font-weight: bold;
     border-radius: 10px;
     box-shadow: 1px 1px 7px 0px #fff;
+    cursor: pointer;
 }
 .sold{background-color:  red;}
 .notsold{background-color: green;}
