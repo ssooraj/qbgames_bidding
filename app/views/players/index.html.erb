@@ -66,24 +66,29 @@
     </p> <!-- cd-item-info -->
     <a href="#0" class="cd-close">Close</a>
   </div> <!-- cd-quick-view -->
-  </div>
-  <script type="text/javascript">
+</div>
+<script type="text/javascript">
+    $(document).on('ready',function(event) {
+        setInterval(function () {
+            $.ajax({
+                url: '/players/update_sold',
+                crossDomain: true,
+                data: {id: 'no'},
+                async: false,
+                success: function (response) {
+                    var x = $('.ui-tabs-nav').find('[aria-selected= true]');
+                    var division = x.children('a').attr('href');
+                    console.log(division);
+                    if(division == '#tabs-5'){
+                        $("body").trigger("click");
+                    }
+                    $("#tabs-5 .cd-container").html(response.html);
+                },
+                error: function (xhr, status, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        }, 30000);
 
-      $(document).ready(function () {
-          setInterval(function () {
-              $.ajax({
-                  url: '/players/update_sold',
-                  crossDomain: true,
-                  data: {id: 'no'},
-                  async: false,
-                  success: function (response) {
-                      $("#tabs-5 .cd-container").html(response.html);
-                  },
-                  error: function (xhr, status, errorThrown) {
-                      console.log(errorThrown);
-                  }
-              });
-          }, 10000);
-
-      });
-  </script>
+    });
+</script>
