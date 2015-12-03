@@ -597,8 +597,8 @@ p#status {
     border:0;
     width: 200px;
     position: absolute;
-    bottom: -90 px !important;
-    right: 34px !important;
+    bottom: -110px !important;
+    right: 250px !important;
     text-align: center;
     text-transform: uppercase;
     padding: 5px 0;
@@ -610,9 +610,9 @@ p#status {
 
 p#next {
     border:0;
-    width: 200px;
+    width: 170px;
     position: absolute;
-    bottom: -84px !important;
+    bottom: -110px !important;
     right: 34px !important;
     text-align: center;
     text-transform: uppercase;
