@@ -84,7 +84,7 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#status').attr('class', 'notsold');
                 }
                 $('.cd-item-info').append('<p id="next" class=""></p>');
-                $('.cd-item-info').children('#next').text('Random');
+                $('.cd-item-info').children('#next').text('Next');
                 $('.cd-item-info').children('#next').attr('class', 'sold');
                 var x = $('.ui-tabs-nav').find('[aria-selected= true]');
                 var division = x.children('a').attr('href');
