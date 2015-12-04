@@ -263,6 +263,7 @@ a.cd-trigger, a.cd-trigger1 {
     .cd-quick-view {
         display: block;
         position: fixed;
+        top: 10% !important;
         max-width: 900px;
         min-height: 500px;
         visibility: hidden;
