@@ -1,4 +1,3 @@
-<div class="team_name">Team Value : <%= @blaster_players.collect(&:sold_price).sum%> </div>
 <% @blasters.owners.each do |player| %>
     <% if player.avatar.url.nil? %>
         <li class="cd-item" style="background:url('assets/face.png');background-size:cover;background-position: center;">
