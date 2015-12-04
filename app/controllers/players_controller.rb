@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
     devils_team = Player.where('team_id =?', 3).order('is_star desc, sold_price desc')
     @devil_players = devils_team - @devils.owners
     @termins = Team.find 4
-    termins_team = Player.where('team_id =?', 3).order('is_star desc, sold_price desc')
+    termins_team = Player.where('team_id =?', 4).order('is_star desc, sold_price desc')
     @termin_players = termins_team - @termins.owners
   end
 
