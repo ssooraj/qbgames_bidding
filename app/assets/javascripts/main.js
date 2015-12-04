@@ -21,8 +21,6 @@ jQuery(document).ready(function($){
                 $('.cd-item-info').children('#cricket').remove();
                 $('.cd-item-info').children('#football').remove();
                 $('.cd-item-info').children('#badminton').remove();
-                $('.cd-item-info').children('#status').remove();
-                $('.cd-item-info').children('#next').remove();
                 $('.cd-item-info').children('#base-price').remove();
                 $('.cd-item-info').children('#sold-price').remove();
                 $('.cd-item-info').children('#player_id').text(response.id);
@@ -73,23 +71,6 @@ jQuery(document).ready(function($){
                     $('.cd-item-info').children('#stars').attr('src', '/assets/star.png');
                 }else {
                     $('.cd-item-info').children('#stars').attr('src', '/assets/blank.png');
-                }
-                if( response.status ) {
-                    $('.cd-item-info').append('<p id="status" class=""></p>');
-                    $('.cd-item-info').children('#status').text('Sold');
-                    $('.cd-item-info').children('#status').attr('class', 'sold');
-                }else {
-                    $('.cd-item-info').append('<p id="status" class=""></p>');
-                    $('.cd-item-info').children('#status').text('Not Sold');
-                    $('.cd-item-info').children('#status').attr('class', 'notsold');
-                }
-                $('.cd-item-info').append('<p id="next" class=""></p>');
-                $('.cd-item-info').children('#next').text('Next');
-                $('.cd-item-info').children('#next').attr('class', 'sold');
-                var x = $('.ui-tabs-nav').find('[aria-selected= true]');
-                var division = x.children('a').attr('href');
-                if(division == '#tabs-5'){
-                    $('.cd-item-info').children('#next').remove();
                 }
             },
             error: function(xhr, status, errorThrown) {

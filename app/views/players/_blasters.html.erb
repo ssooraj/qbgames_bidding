@@ -1,4 +1,28 @@
-<% @star.each do |player| %>
+<% @blasters.owners.each do |player| %>
+    <% if player.avatar.url.nil? %>
+        <li class="cd-item" style="background:url('assets/face.png');background-size:cover;background-position: center;">
+          <img src='assets/face.png'   name='<%= player.id %>' alt="Item Preview" style="display:none;">
+    <%else%>
+        <li class="cd-item" style="background:url(<%=player.avatar.big.url %> );background-size:cover;background-position: center;">
+          <img src=<%=player.avatar.big.url %>   name='<%= player.id %>' alt="Item Preview" style="display:none;">
+    <%end%>
+
+    <div class="games">
+      <% if player.owner %> Owner <%end%>
+      <% if player.co_owner %> Co Owner <%end%>
+      <% if player.football_capt %> Football Captain <%end%>
+      <% if player.cricket_capt %> Cricket Captain <%end%>
+    </div>
+    <div class="content">
+
+    </div>
+    <a href="#0" class="cd-trigger">
+      <%= player.first_name%>
+    </a>
+    </li> <!-- cd-item -->
+<%end %>
+
+<% @blaster_players.each do |player| %>
     <% if player.avatar.url.nil? %>
         <li class="cd-item" style="background:url('assets/face.png');background-size:cover;background-position: center;">
           <img src='assets/face.png'   name='<%= player.id %>' alt="Item Preview" style="display:none;">
@@ -21,9 +45,3 @@
     </a>
     </li> <!-- cd-item -->
 <% end %>
-
-<div class="add_mod">
-  <a href="#0" class="add_mod_star" >
-    Start Auction
-  </a>
-</div>

@@ -3,41 +3,29 @@
 </header>
 <div id="tabs">
   <ul>
-    <li><a href="#tabs-1">Icons</a></li>
-    <li><a href="#tabs-2">Dauntless Guys</a></li>
-    <li><a href="#tabs-3">Peppy Galz</a></li>
-    <li><a href="#tabs-4">Teams</a></li>
-    <li><a href="#tabs-5">Sold</a></li>
-    <li><a href="#tabs-6">Money Bag</a></li>
+    <li><a href="#tabs-1">Avengers</a></li>
+    <li><a href="#tabs-2">Blasters</a></li>
+    <li><a href="#tabs-3">DareDevils</a></li>
+    <li><a href="#tabs-4">Terminators</a></li>
   </ul>
   <div id="tabs-1">
     <ul class="cd-items cd-container">
-      <%= render :partial => '/players/star' %>
+      <%= render :partial => '/players/avengers' %>
     </ul> <!-- cd-items -->
   </div>
   <div id="tabs-2">
     <ul class="cd-items cd-container">
-      <%= render :partial => '/players/guys' %>
+      <%= render :partial => '/players/blasters' %>
     </ul> <!-- cd-items -->
   </div>
   <div id="tabs-3">
     <ul class="cd-items cd-container">
-      <%= render :partial => '/players/galz' %>
+      <%= render :partial => '/players/devils' %>
     </ul> <!-- cd-items -->
   </div>
   <div id="tabs-4">
     <ul class="cd-items cd-container">
-      <%= render :partial => '/players/teams' %>
-    </ul> <!-- cd-items -->
-  </div>
-  <div id="tabs-5">
-    <ul class="cd-items cd-container">
-      <%= render :partial => '/players/sold' %>
-    </ul> <!-- cd-items -->
-  </div>
-  <div id="tabs-6">
-    <ul class="cd-items cd-container">
-      <%= render :partial => '/players/money' %>
+      <%= render :partial => '/players/termins' %>
     </ul> <!-- cd-items -->
   </div>
 </div>
@@ -55,7 +43,6 @@
     <p id="team"></p>
     <p id="base-price"> </p>
     <p id="sold-price"></p>
-    <p id="status" class=""></p>
     <p id="player_id" style="display: none;"> </p>
     <img src="/assets/blank.png" id="cricket" >
     <img src="/assets/blank.png" id="football" >
@@ -67,28 +54,4 @@
     <a href="#0" class="cd-close">Close</a>
   </div> <!-- cd-quick-view -->
 </div>
-<script type="text/javascript">
-    $(document).on('ready',function(event) {
-        setInterval(function () {
-            $.ajax({
-                url: '/players/update_sold',
-                crossDomain: true,
-                data: {id: 'no'},
-                async: false,
-                success: function (response) {
-                    var x = $('.ui-tabs-nav').find('[aria-selected= true]');
-                    var division = x.children('a').attr('href');
-                    console.log(division);
-                    if(division == '#tabs-5'){
-                        $("body").trigger("click");
-                    }
-                    $("#tabs-5 .cd-container").html(response.html);
-                },
-                error: function (xhr, status, errorThrown) {
-                    console.log(errorThrown);
-                }
-            });
-        }, 30000);
 
-    });
-</script>

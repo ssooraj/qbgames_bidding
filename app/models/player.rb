@@ -59,4 +59,36 @@ class Player < ActiveRecord::Base
 		end
 		p player
 	end
+
+	def owner
+		if team.owner_id == id
+			true
+		else
+			false
+		end
+	end
+
+	def co_owner
+		if team.co_owner_id == id
+			true
+		else
+			false
+		end
+	end
+
+	def football_capt
+		if team.football_captain_id == id
+			true
+		else
+			false
+		end
+	end
+
+	def cricket_capt
+		if team.cricket_captain_id == id
+			true
+		else
+			false
+		end
+	end
 end

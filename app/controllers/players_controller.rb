@@ -1,11 +1,18 @@
 class PlayersController < ApplicationController
 
   def index
-    @star  = Player.where(in_for_auction: true, is_star: true).order(base_price: :desc)
-    @guy   = Player.where(in_for_auction: true, is_star: false, sex: 'Dauntless Guy').order(base_price: :desc)
-    @gal   = Player.where(in_for_auction: true, is_star: false, sex: 'Peppy Gal').order(base_price: :desc)
-    @sold =  Player.where(is_sold: true).where('sold_price is NOT NULL').order(sold_price: :desc)
-    @teams  = Team.all
+    @avengers = Team.find 1
+    @avenger_players = Player.where('team_id =? AND sold_price is NOT NULL', 1).
+        order('is_star desc, sold_price desc')
+    @blasters = Team.find 2
+    @blaster_players = Player.where('team_id =? AND sold_price is NOT NULL', 2).
+        order('is_star desc, sold_price desc')
+    @devils = Team.find 3
+    @devil_players = Player.where('team_id =? AND sold_price is NOT NULL', 3).
+        order('is_star desc, sold_price desc')
+    @termins = Team.find 4
+    @termin_players = Player.where('team_id =? AND sold_price is NOT NULL', 3).
+        order('is_star desc, sold_price desc')
   end
 
   def get_player_details

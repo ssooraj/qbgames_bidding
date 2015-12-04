@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require modernizr
 //= require velocity.min
-//= require script
 //= require main
 
 //= require_tree .
