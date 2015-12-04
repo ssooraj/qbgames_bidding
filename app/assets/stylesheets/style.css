@@ -17,6 +17,11 @@ p#base-price {
     font-weight: bold;
     font-size: 20px;
 }
+p#sold-price {
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+}
 body {
     font-size: 100%;
     font-family: "PT Sans", sans-serif;
