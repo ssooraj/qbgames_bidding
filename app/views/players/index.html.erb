@@ -9,25 +9,25 @@
     <li><a href="#tabs-4">Terminators</a></li>
   </ul>
   <div id="tabs-1">
-    <div class="team_name">Team Value : <%= @avenger_players.collect(&:sold_price).sum%> </div>
+    <div class="team_name">Team Value : <%= @avenger_players.collect(&:sold_price).compact.sum%> </div>
     <ul class="cd-items cd-container">
       <%= render :partial => '/players/avengers' %>
     </ul> <!-- cd-items -->
   </div>
   <div id="tabs-2">
-    <div class="team_name">Team Value : <%= @blaster_players.collect(&:sold_price).sum%> </div>
+    <div class="team_name">Team Value : <%= @blaster_players.collect(&:sold_price).compact.sum%> </div>
     <ul class="cd-items cd-container">
       <%= render :partial => '/players/blasters' %>
     </ul> <!-- cd-items -->
   </div>
   <div id="tabs-3">
-    <div class="team_name">Team Value : <%= @devil_players.collect(&:sold_price).sum%> </div>
+    <div class="team_name">Team Value : <%= @devil_players.collect(&:sold_price).compact.sum%> </div>
     <ul class="cd-items cd-container">
       <%= render :partial => '/players/devils' %>
     </ul> <!-- cd-items -->
   </div>
   <div id="tabs-4">
-    <div class="team_name">Team Value : <%= @termin_players.collect(&:sold_price).sum%> </div>
+    <div class="team_name">Team Value : <%= @termin_players.collect(&:sold_price).compact.sum%> </div>
     <ul class="cd-items cd-container">
       <%= render :partial => '/players/termins' %>
     </ul> <!-- cd-items -->

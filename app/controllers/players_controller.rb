@@ -2,17 +2,17 @@ class PlayersController < ApplicationController
 
   def index
     @avengers = Team.find 1
-    @avenger_players = Player.where('team_id =? AND sold_price is NOT NULL', 1).
-        order('is_star desc, sold_price desc')
+    avengers_team = Player.where('team_id =?', 1).order('is_star desc, sold_price desc')
+    @avenger_players =  avengers_team - @avengers.owners
     @blasters = Team.find 2
-    @blaster_players = Player.where('team_id =? AND sold_price is NOT NULL', 2).
-        order('is_star desc, sold_price desc')
+    blasters_team = Player.where('team_id =?', 2).order('is_star desc, sold_price desc')
+    @blaster_players = blasters_team - @blasters.owners
     @devils = Team.find 3
-    @devil_players = Player.where('team_id =? AND sold_price is NOT NULL', 3).
-        order('is_star desc, sold_price desc')
+    devils_team = Player.where('team_id =?', 3).order('is_star desc, sold_price desc')
+    @devil_players = devils_team - @devils.owners
     @termins = Team.find 4
-    @termin_players = Player.where('team_id =? AND sold_price is NOT NULL', 4).
-        order('is_star desc, sold_price desc')
+    termins_team = Player.where('team_id =?', 3).order('is_star desc, sold_price desc')
+    @termin_players = termins_team - @termins.owners
   end
 
   def get_player_details
