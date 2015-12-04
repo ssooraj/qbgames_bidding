@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
     @devil_players = Player.where('team_id =? AND sold_price is NOT NULL', 3).
         order('is_star desc, sold_price desc')
     @termins = Team.find 4
-    @termin_players = Player.where('team_id =? AND sold_price is NOT NULL', 3).
+    @termin_players = Player.where('team_id =? AND sold_price is NOT NULL', 4).
         order('is_star desc, sold_price desc')
   end
 
