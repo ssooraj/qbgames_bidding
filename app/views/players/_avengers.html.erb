@@ -1,3 +1,4 @@
+<div class="team_name">Team Value : <%= @avenger_players.collect(&:sold_price).sum%> </div>
 <% @avengers.owners.each do |player| %>
     <% if player.avatar.url.nil? %>
         <li class="cd-item" style="background:url('assets/face.png');background-size:cover;background-position: center;">

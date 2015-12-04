@@ -761,7 +761,7 @@ p#next {
 }
 .team{overflow: auto;
     width: 100%;}
-.team_name{ float: left;width: 100%;margin-bottom: 18px;color: #FFD039;font-weight: bold;}
+.team_name{ float: left;width: 100%;margin-bottom: 40px;color: #FFD039;font-weight: bold;}
 .cd-item1 .games{padding:10px;color: #fff;}
 
 div#tabs-6 .cd-items.cd-container {
