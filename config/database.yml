@@ -7,20 +7,20 @@ default: &default
 development:
   <<: *default
   database: qliga
-  username: sooraj
+  username: postgres
   password: qburst
   host: localhost
 
 test:
   <<: *default
   database: qliga
-  username: sooraj
+  username: postgres
   password: qburst
   host: localhost
 
 production:
   <<: *default
   database: qliga
-  username: sooraj
+  username: postgres
   password: qburst
   host: localhost
